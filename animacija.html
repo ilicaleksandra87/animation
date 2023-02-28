@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animacija</title>
+
+    <style>
+        #ring {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            position: absolute;
+            animation-name: my-animation;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+
+        #circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: #050210;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }
+
+        #circle::after{
+            content: '';
+            background: #09041d;
+            position: absolute;
+            border-radius: 50%;
+            animation-name: small-circle;
+            animation-duration: 3s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        
+
+        #first {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            position: absolute;
+            animation-name: my-animation;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            filter: blur(30px);
+        }
+
+
+        body {
+            height: 100vh;
+            display: flex;
+            margin: 0px;
+            align-items: center;
+            justify-content: center;
+            background-color: #050210;
+        }
+
+        @keyframes my-animation {
+
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes small-circle {
+            0% {
+                width: 8px;
+                height: 8px;
+            }
+            100% {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="first"></div>
+    <div id="ring"></div>
+    <div id="circle"></div>
+
+
+
+</body>
+
+</html>
